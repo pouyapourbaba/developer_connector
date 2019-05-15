@@ -1,3 +1,4 @@
 {
-   "mongoURI": "mongodb+srv://developerConnectorPouya:developerConnectorPouya@developer-connector-r9v6m.mongodb.net/test?retryWrites=true" 
+   "mongoURI": "mongodb+srv://developerConnectorPouya:developerConnectorPouya@developer-connector-r9v6m.mongodb.net/test?retryWrites=true" ,
+   "jwtSecret": "mySecretToken"
 }
