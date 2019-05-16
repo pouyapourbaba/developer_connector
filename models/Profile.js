@@ -51,5 +51,18 @@ const profileValidator = [
     .isEmpty()
 ];
 
+const experienceValidator = [
+  check("title", "Title is required")
+    .not()
+    .isEmpty(),
+  check("company", "Company is required")
+    .not()
+    .isEmpty(),
+  check("from", "From date is required")
+    .not()
+    .isEmpty()
+];
+
 module.exports.Profile = mongoose.model("profile", ProfileSchema);
 module.exports.profileValidator = profileValidator;
+module.exports.experienceValidator = experienceValidator;
