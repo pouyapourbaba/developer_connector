@@ -9,7 +9,7 @@ const { User, userValidator } = require("../../models/User");
 
 // @route   POST api/users
 // @desc    Register user
-//@access   Public
+// @access  Public
 router.post("/", userValidator, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -51,7 +51,7 @@ router.post("/", userValidator, async (req, res) => {
   const token = await jwt.sign(payload, config.get("jwtSecret"), {
     expiresIn: 36000
   });
-  
+
   res.json({ token });
   res.send("User Registered");
 });
