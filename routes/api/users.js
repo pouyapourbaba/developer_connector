@@ -5,12 +5,12 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const { validationResult } = require("express-validator/check");
-const { User, userValidator } = require("../../models/User");
+const { User, userRegistrationValidator } = require("../../models/User");
 
 // @route   POST api/users
 // @desc    Register user
 // @access  Public
-router.post("/", userValidator, async (req, res) => {
+router.post("/", userRegistrationValidator, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });

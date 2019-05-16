@@ -9,7 +9,7 @@ const UserSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now }
 });
 
-const userValidator = [
+const userRegistrationValidator = [
   check("name", "Name is required")
     .not()
     .isEmpty(),
@@ -20,5 +20,11 @@ const userValidator = [
   ).isLength({ min: 6 })
 ];
 
+const userAuthenticationValidator = [
+  check("email", "Please include a valide email").isEmail(),
+  check("password", "Password is required").exists()
+];
+
 module.exports.User = mongoose.model("user", UserSchema);
-module.exports.userValidator = userValidator;
+module.exports.userRegistrationValidator = userRegistrationValidator;
+module.exports.userAuthenticationValidator = userAuthenticationValidator;
