@@ -1,4 +1,6 @@
 {
    "mongoURI": "mongodb+srv://developerConnectorPouya:developerConnectorPouya@developer-connector-r9v6m.mongodb.net/test?retryWrites=true" ,
-   "jwtSecret": "mySecretToken"
+   "jwtSecret": "mySecretToken",
+   "githubClientId": "73f1cf2d26ff2abb4a75",
+   "githubSecret": "d163bfa0d6becf54312a6483674f04d17a9083b7"
 }
