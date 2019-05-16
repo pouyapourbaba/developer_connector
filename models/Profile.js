@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { check } = require("express-validator/check");
 
 const ProfileSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
@@ -41,4 +42,14 @@ const ProfileSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now }
 });
 
+const profileValidator = [
+  check("status", "Status is required")
+    .not()
+    .isEmpty(),
+  check("skills", "Skills is required")
+    .not()
+    .isEmpty()
+];
+
 module.exports.Profile = mongoose.model("profile", ProfileSchema);
+module.exports.profileValidator = profileValidator;
