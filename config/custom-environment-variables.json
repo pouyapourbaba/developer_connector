@@ -1,0 +1,6 @@
+{
+    "mongoURI": "developerConnector_mongoURI",
+    "jwtSecret": "developerConnector_jwtSecret",
+    "githubClientId": "developerConnector_githubClientId",
+    "githubSecret": "developerConnector_githubSecret"
+ }
