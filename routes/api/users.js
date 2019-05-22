@@ -53,7 +53,6 @@ router.post("/", userRegistrationValidator, async (req, res) => {
   });
 
   res.json({ token });
-  res.send("User Registered");
 });
 
 module.exports = router;

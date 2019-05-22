@@ -11,6 +11,7 @@ const { User, userAuthenticationValidator } = require("../../models/User");
 // @desc    Test route
 // @access  Private
 router.get("/", auth, async (req, res) => {
+  console.log("route")
   try {
     const user = await User.findById(req.user.id).select("-password");
     res.json(user);
