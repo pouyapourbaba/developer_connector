@@ -5,7 +5,8 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
-  LOGIN_FAIL
+  LOGIN_FAIL,
+  LOGOUT
 } from "./tyeps";
 import { setAlert } from "./alertActions";
 import setAuthToken from "./../utils/setAuthToken";
@@ -20,7 +21,7 @@ export const register = ({ name, email, password }) => async dispatch => {
       type: REGISTER_SUCCESS,
       payload: res.data
     });
-    
+
     dispatch(loadUser());
   } catch (ex) {
     const errors = ex.response.data.errors;
@@ -77,4 +78,9 @@ export const loadUser = () => async dispatch => {
       type: AUTH_ERROR
     });
   }
+};
+
+// LOgout
+export const logout = () => dispatch => {
+  dispatch({ type: LOGOUT });
 };
